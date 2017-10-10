@@ -7,13 +7,20 @@
 
 import React from 'react';
 
-// use only the video property of props
-const VideoListItem = ({video}) => {
+/**
+ * use the video, onVideoSelect properties of props
+ * @param video: comes from the VideoList component
+ * @param onVideoSelect: comes from the VideoList component
+ * @returns {jsx}
+ * @constructor
+ */
+const VideoListItem = ({video, onVideoSelect}) => {
   // const video = props.video; ~~ to {video} above
 
   const imageUrl = video.snippet.thumbnails.default.url;
+  /* the onClick: sets the property "props.onVideoSelect" to the video that was clicked. */
   return (
-    <li className="list-group-item">
+    <li onClick={() => onVideoSelect(video)} className="list-group-item">
       <div className="video-list media">
         <div className="media-list">
           <img className="media-object" src={imageUrl} />

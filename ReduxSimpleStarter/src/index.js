@@ -17,17 +17,23 @@ import {youTubeAPIKey} from './youtube_API_KEY';
 // get the API Key for youtube.com
 const API_KEY = youTubeAPIKey();
 
-// App is our Parent component
+/**
+ * App is our Parent component
+ */
 class App extends Component {
   constructor (props) {
     super (props);
 
-    this.state = { videos: [] };
+    this.state = {
+      videos: [],
+      selectedVideo: null
+    };
 
     YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
-      // this.setState({videos: videos}); is the same as below
-      // because the key:value pair has the same name
-      this.setState({ videos });
+      this.setState({
+        videos: videos,
+        selectedVideo: videos[0]
+      });
     });
   }
 
@@ -35,9 +41,14 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
-        <VideoDetail video={this.state.videos[0]} />
-        {/* here we pass prop videos to the VideoList */}
-        <VideoList videos={this.state.videos} />
+        <VideoDetail video={this.state.selectedVideo} />
+        {/*
+          - here we pass prop videos to the VideoList
+          - and set the new state with the clicked video
+          */}
+        <VideoList
+          onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+          videos={this.state.videos} />
       </div>
     );
   }
