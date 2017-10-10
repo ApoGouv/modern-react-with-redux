@@ -7,6 +7,7 @@
 
 import React from 'react';
 
+// use only the video property of props
 const VideoListItem = ({video}) => {
   // const video = props.video; ~~ to {video} above
 
