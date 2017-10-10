@@ -4,3 +4,11 @@
  * Author  : Apostolos Gouvalas
  * Date    : 9/10/2017
  */
+
+import React from 'react';
+
+const VideoListItem = (props) => {
+  return <li>Video</li>;
+};
+
+export default VideoListItem;
