@@ -5,7 +5,7 @@ import {openWeatherMapAPIKey} from './openweathermap_API_KEY';
 // get the API Key for openweathermap.org
 const API_KEY = openWeatherMapAPIKey();
 
-const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
+const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}&units=metric`;
 
 export const FETCH_WEATHER = 'FETCH_WEATHER';
 
