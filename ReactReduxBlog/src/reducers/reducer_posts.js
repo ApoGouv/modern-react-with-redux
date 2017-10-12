@@ -5,10 +5,13 @@
  * Date    : 12/10/2017
  */
 import _ from 'lodash';
-import { FETCH_POSTS, FETCH_POST } from '../actions';
+import { FETCH_POSTS, FETCH_POST, DELETE_POST } from '../actions';
 
 export default function (state = {}, action) {
   switch (action.type){
+    case DELETE_POST:
+      // if you find an the deleted id in the state, drop it
+      return _.omit(state, action.payload);
     case FETCH_POST:
       // const post = action.payload.data;
       // const newState = { ...state,  };
