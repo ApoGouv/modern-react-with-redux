@@ -5,12 +5,12 @@
  * Date    : 12/10/2017
  */
 import _ from 'lodash';
-import { FETCH_POSTS } from '../actions';
+import { FETCH_POSTS, CREATE_POST } from '../actions';
 
 export default function (state = {}, action) {
   switch (action.type){
     case FETCH_POSTS:
-      // we get fro mAPI: [ postObj, postObj, postObj ]
+      // we get from API: [ postObj, postObj, postObj ]
       // we transform what we get, to { postID: {postObj} }
       return _.mapKeys(action.payload.data, 'id');
     default:
