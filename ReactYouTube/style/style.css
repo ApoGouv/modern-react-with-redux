@@ -18,6 +18,31 @@
     cursor: pointer;
 }
 
-.list-group-item:hover{
+.list-group-item:hover {
     background-color: #eee;
+}
+
+/* React Transitions */
+/* starting state of animation */
+.fade-enter {
+    transform: rotateX(90deg) rotateZ(90deg);
+    opacity: 0;
+}
+
+/* end state of animation */
+.fade-enter-active {
+    transform: rotateX(0deg) rotateZ(0deg);
+    opacity: 1.0;
+    transition: .5s ease-in all;
+}
+
+.fade-leave {
+    left: 0;
+    opacity: 1.0;
+}
+
+.fade-leave-active{
+    left: 100px;
+    opacity: 0;
+    transition: .5s ease-out all;
 }
