@@ -14,15 +14,16 @@ class PostsShow extends Component {
   componentDidMount(){
     // save a request if we already have the data - this is not needed, but is network efficient
     if (!this.props.post){
+      // get the :id wildcard, passed in the url
       const {id} = this.props.match.params;
       this.props.fetchPost(id);
     }
-
   }
 
   onDeleteClick() {
     const {id} = this.props.match.params;
 
+    // pass a callback to the action creator, to cal after it finishes it's execution
     this.props.deletePost(id, () => {
       this.props.history.push('/');
     });

@@ -18,6 +18,7 @@ export default function (state = {}, action) {
       // newState[post.id] = post;
       // return newState;
 
+      // this will override any previous records with the same id
       return { ...state, [action.payload.data.id]: action.payload.data };
     case FETCH_POSTS:
       // we get from API: [ postObj, postObj, postObj ]
