@@ -13,7 +13,7 @@ import {createPost} from '../actions';
 
 class PostsNew extends Component {
   renderField(field) {
-    // destructure some values fro mthe 'field' to clean up our code
+    // destructure some values from the 'field' to clean up our code
     const {meta: {touched, error}} = field;
     const className = `form-group ${touched && error ? 'has-danger' : ''}`;
 
@@ -34,7 +34,7 @@ class PostsNew extends Component {
   }
 
   renderTextareaField(field) {
-    // destructure some values fro mthe 'field' to clean up our code
+    // destructure some values from the 'field' to clean up our code
     const {meta: {touched, error}} = field;
     const className = `form-group ${touched && error ? 'has-danger' : ''}`;
 
